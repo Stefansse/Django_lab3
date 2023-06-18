@@ -19,6 +19,12 @@ from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 
+from Blog.views import add_post, posts, blocked_users, profile
+
 urlpatterns = [
                   path('admin/', admin.site.urls),
+                  path('add/post/', add_post, name="add_post"),
+                  path('posts/', posts, name="posts"),
+                  path('blockedUsers/', blocked_users, name="blocked_users"),
+                  path('profile/', profile, name="profile"),
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
